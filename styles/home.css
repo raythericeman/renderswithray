@@ -1,0 +1,81 @@
+.home-header {
+    text-align: center;
+    background-color: rgb(24, 91, 206);
+    font-size: 50px;
+    color: white;
+    font-family: Bubblegum Sans;
+    padding: 0.5%;
+    border: 2px solid black;
+    /* position: fixed; */
+    font-weight: bold;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.about {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.earth-pic {
+    width: 40px;
+    height: 40px;
+}
+
+.circlesGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: rgb(86, 131, 207);
+    margin-top: 3%;
+    background-image: url("/images/planet-earth.png");
+    background-size: cover;
+}
+
+body {
+    background-color:rgb(86, 131, 207);
+}
+
+.box {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8%;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.circles {
+    text-align: center;
+    margin-top: 5%;
+    margin: 5%;
+    aspect-ratio: 1;
+    /* border: solid; */
+    border-radius: 50%;
+    max-width: 250px;
+    justify-self: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.picture-circles {
+    text-align: center;
+    margin-top: 5%;
+    /* margin: 5%; */
+    aspect-ratio: 1;
+    border: solid black;
+    border-radius: 50%;
+    max-width: 250px;
+    justify-self: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+

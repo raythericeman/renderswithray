@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'>
+  <link rel="stylesheet" href="/styles/3dcreations.css">
+  <title>Renders with Ray</title>
+</head>
+<body>
+
+<div class="home-nav">
+  Renders with Ray <span><img src="/images/planet-earth.png" class="earth-pic"></span>
+</div>
+
+<div class="grid-container">
+
+  <div class="side-menu">
+    <div class="menu-links">
+      <a href="index.html">Home</a>
+    </div>
+    <div class="menu-links">
+      <a href="3dcreations.html">3D Creations</a>
+    </div>
+    <div class="menu-links">
+      <a href="https://www.linkedin.com/in/rayalau/">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="circlesGrid">
+    <div class="box">
+      <div class="circles" id="open-orbis" onclick="openModal('orbis')">
+        <img src="/images\3dcreations_images\orbis_cover.png" class="picture-circles">
+      </div>
+      Fantasy Ship Animation (Short Video)
+    </div>
+    <div class="box">
+      <div class="circles" id="open-spongebob" onclick="openModal('spongebob')">
+        <img src="/images\3dcreations_images\salty_spitoon_cover.png" class="picture-circles">
+      </div>
+      Spongebob Fan Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles" id="open-voltorb" onclick="openModal('voltorb')">
+        <img src="/images\3dcreations_images\voltorb_cover.png" class="picture-circles">
+      </div>
+      Pokemon Fan Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles" id="open-penguin" onclick="openModal('penguin')">
+        <img src="/images\3dcreations_images\penguin_cover.jpg" class="picture-circles">
+      </div>
+      Penguin Short Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles" id="open-earth" onclick="openModal('earth')">
+        <img src="/images\3dcreations_images\earth_cover.png" class="picture-circles">
+      </div>
+      Earth Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles" id="open-honda" onclick="openModal('honda')">
+        <img src="/images\3dcreations_images\Honda_NSX_Cover.png" class="picture-circles">
+      </div>
+      Earth Animation (Short Video)
+    </div>
+
+  </div>
+
+</div>
+
+<div class='modal' id='videoModal'>
+  <div class='modal-container'>
+    <div class='video-box'>
+      <video id="video-player" width='580' height='580' controls>
+        <source src='' type='video/mp4'>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <button class='close-button' id='close' onclick='closeModal()'>X</button>
+  </div>
+</div>
+
+</body>
+
+<script>
+
+// 1. Data Logic: Returns an object based on the selection
+function getVideoData(selection) {
+  const inventory = {
+    'orbis': { 
+      id: 'open-orbis', 
+      src: '/videos/Orbis_Ship.mp4' 
+    },
+    'spongebob': { 
+      id: 'open-spongebob', 
+      src: '/videos/Spongebob.mp4' 
+    },
+    'voltorb': {
+      id: 'open-voltorb',
+      src: '/videos/Voltorb_Explosion_Animation.mp4'
+    },
+    'penguin': {
+      id: 'open-penguin',
+      src: '/videos/Penguin_Project.mp4'
+    },
+    'earth': {
+      id: 'open-earth',
+      src: '/videos/Earth Rotating.mp4'
+    }
+  };
+  return inventory[selection] || null;
+}
+
+// 2. Open Logic: Updates video and shows modal
+function openModal(selection) {
+  const data = getVideoData(selection);
+  if (!data) return console.error("Video not found");
+
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('video-player');
+
+  // 1. Update the src directly on the video element (more reliable)
+  video.src = data.src;
+
+  // 2. Force the browser to recognize the new file
+  video.load();
+
+  // 3. Show the modal
+  modal.classList.add('show');
+  
+  // 4. Play (most browsers require a user click to allow this)
+  video.play().catch(error => {
+    console.log("Autoplay was prevented, waiting for user to click play.");
+  });
+}
+
+// 3. Close Logic: Hides modal and stops noise
+function closeModal() {
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('video-player');
+
+  modal.classList.remove('show');
+  
+  video.pause();
+  video.src = ""; // Clear the source
+  video.load();   // Reset the player
+}
+</script>
+
+
+
+
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'>
+  <link rel="stylesheet" href="/styles/3dcreations.css">
+  <title>Renders with Ray</title>
+</head>
+<body>
+
+<div class="home-nav">
+  Renders with Ray <span><img src="/images/planet-earth.png" class="earth-pic"></span>
+</div>
+
+<div class="grid-container">
+
+  <div class="side-menu">
+    <div class="menu-links">
+      <a href="index.html">Home</a>
+    </div>
+    <div class="menu-links">
+      3D Creations
+    </div>
+    <div class="menu-links">
+      LinkedIn
+    </div>
+  </div>
+
+  <div class="circlesGrid">
+    <div class="box">
+      <div class="circles" id="open">
+        <img src="/images\3dcreations_images\orbis_cover.png" class="picture-circles">
+      </div>
+      Fantasy Ship Animation (Short Video)
+    </div>
+    <div class="box">
+      <div class="circles" id="open">
+        <img src="/images\3dcreations_images\salty_spitoon_cover.png" class="picture-circles">
+      </div>
+      Spongebob Fan Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles">
+        <img src="/images\3dcreations_images\voltorb_cover.png" class="picture-circles">
+      </div>
+      Pokemon Fan Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles">
+        <img src="/images\3dcreations_images\penguin_cover.jpg" class="picture-circles">
+      </div>
+      Penguin Short Animation (Short Video)
+    </div>
+
+    <div class="box">
+      <div class="circles">
+        <img src="/images\3dcreations_images\water_fountain_cover.jpg" class="picture-circles">
+      </div>
+      Water Fountain Render
+    </div>
+
+  </div>
+
+</div>
+
+<div class='modal' id='modal'>
+  <div class='modal-container'>
+        <div>
+        </div>
+        <div class='video-box'>
+          <video id = 'orbis-animation' width='580' height='580' controls>
+            <source src='/videos\Orbis_Ship.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div>
+          <button class='close-button' id='close' onclick='stopVideo()'>X</button>
+        </div>
+  </div>
+</div>
+
+</body>
+
+<script>
+const open = document.getElementById('open');
+const modal = document.getElementById('modal');
+const close = document.getElementById('close');
+
+open.addEventListener('click', () => {
+  modal.classList.add('show');
+});
+
+close.addEventListener('click', () => {
+  modal.classList.remove('show');
+})
+
+function stopVideo() {
+  const videoElement = document.getElementById("orbis-animation");
+  
+  console.log(videoElement);
+
+  if (videoElement) {
+    videoElement.pause(); // Pauses the video
+    videoElement.currentTime = 0; // Resets the video to the start
+  }
+}
+
+</script> -->
