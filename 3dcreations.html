@@ -10,7 +10,7 @@
 <body>
 
 <div class="home-nav">
-  Renders with Ray <span><img src="/images/planet-earth.png" class="earth-pic"></span>
+  Renders with Ray <span><img src="images/planet-earth.png" class="earth-pic"></span>
 </div>
 
 <div class="grid-container">
@@ -30,42 +30,42 @@
   <div class="circlesGrid">
     <div class="box">
       <div class="circles" id="open-orbis" onclick="openModal('orbis')">
-        <img src="images\3dcreations_images\orbis_cover.png" class="picture-circles">
+        <img src="images/3dcreations_images/orbis_cover.png" class="picture-circles">
       </div>
       Fantasy Ship Animation
     </div>
 
     <div class="box">
       <div class="circles" id="open-honda" onclick="openModal('honda')">
-        <img src="/images\3dcreations_images\Honda_NSX_Cover.png" class="picture-circles">
+        <img src="images/3dcreations_images/Honda_NSX_Cover.png" class="picture-circles">
       </div>
       Honda NSX 2015 Model
     </div>
 
     <div class="box">
       <div class="circles" id="open-spongebob" onclick="openModal('spongebob')">
-        <img src="/images\3dcreations_images\salty_spitoon_cover.png" class="picture-circles">
+        <img src="images/3dcreations_images/salty_spitoon_cover.png" class="picture-circles">
       </div>
       Underwater Render
     </div>
 
     <div class="box">
       <div class="circles" id="open-voltorb" onclick="openModal('voltorb')">
-        <img src="/images\3dcreations_images\voltorb_cover.png" class="picture-circles">
+        <img src="images/3dcreations_images/voltorb_cover.png" class="picture-circles">
       </div>
       Pokemon Fan Animation
     </div>
 
     <div class="box">
       <div class="circles" id="open-penguin" onclick="openModal('penguin')">
-        <img src="/images\3dcreations_images\penguin_cover.jpg" class="picture-circles">
+        <img src="images/3dcreations_images/penguin_cover.jpg" class="picture-circles">
       </div>
       Penguin Short
     </div>
 
     <div class="box">
       <div class="circles" id="open-earth" onclick="openModal('earth')">
-        <img src="/images\3dcreations_images\earth_cover.png" class="picture-circles">
+        <img src="images/3dcreations_images/earth_cover.png" class="picture-circles">
       </div>
       Earth Rotation
     </div>
@@ -95,27 +95,27 @@ function getVideoData(selection) {
   const inventory = {
     'orbis': { 
       id: 'open-orbis', 
-      src: '/videos/Orbis_Ship.mp4' 
+      src: 'videos/Orbis_Ship.mp4' 
     },
     'honda': { 
       id: 'open-honda', 
-      src: '/videos/Honda_Rotating.mp4'
+      src: 'videos/Honda_Rotating.mp4'
     },
     'spongebob': { 
       id: 'open-spongebob', 
-      src: '/videos/Spongebob.mp4' 
+      src: 'videos/Spongebob.mp4' 
     },
     'voltorb': {
       id: 'open-voltorb',
-      src: '/videos/Voltorb_Explosion_Animation.mp4'
+      src: 'videos/Voltorb_Explosion_Animation.mp4'
     },
     'penguin': {
       id: 'open-penguin',
-      src: '/videos/Penguin_Project.mp4'
+      src: 'videos/Penguin_Project.mp4'
     },
     'earth': {
       id: 'open-earth',
-      src: '/videos/Earth Rotating.mp4'
+      src: 'videos/Earth Rotating.mp4'
     }
   };
   return inventory[selection] || null;
