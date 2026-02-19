@@ -34,7 +34,7 @@
     grid-template-columns: auto auto;
     background-color: rgb(86, 131, 207);
     margin-top: 3%;
-    background-image: url("/images/planet-earth.png");
+    background-image: url("images/planet-earth.png");
     background-size: cover;
 }
 
@@ -76,6 +76,7 @@ body {
     justify-content: center;
     width: 100%;
     cursor: pointer;
+    object-fit: cover;
 }
 
 
